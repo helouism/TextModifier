@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // UPPERCASE function
   window.upperCase = function () {
     let text = document.getElementById("input_text").value;
     document.getElementById("input_text").value = text.toUpperCase();
   };
 
+  // lowercase function
   window.lowerCase = function () {
     let text = document.getElementById("input_text").value;
     document.getElementById("input_text").value = text.toLowerCase();
   };
 
+  // Capital Case function
   window.capitalCase = function () {
     let text = document.getElementById("input_text").value;
     let final_text = text
@@ -16,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
     document.getElementById("input_text").value = final_text;
   };
+
+  // word count event listener
 
   let text = document.getElementById("input_text");
   text.addEventListener("input", () => {
@@ -26,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "word_count"
     ).textContent = `Word count : ${counter}`;
   });
+
+  // Character count event listener
 
   text.addEventListener("input", () => {
     let counter = text.value.length;
